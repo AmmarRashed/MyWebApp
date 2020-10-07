@@ -10,6 +10,15 @@ def hello_world():
     return 'Hello World!'
 
 
+@app.route("/calculate", methods=["GET", "POST"])
+def calculate():
+    if request.method == "POST":
+        expression = request.form["pizzo"]
+        result = eval(expression)
+        return render_template("simple_calculator.html", pizzo=f"Result is {result}")
+    return render_template("simple_calculator.html")
+
+
 @app.route("/display_data")
 def show_data():
     df = pd.read_csv("static/bacteria_train.csv")

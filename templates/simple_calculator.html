@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<h1>Welcome to my calculator</h1>
+<img src="static/calculator.jpg" style="width: 100px">
+<form method="POST">
+    <input type="text" name="pizzo" value="1+1">
+    <input type="submit" value="Calculate">
+</form>
+<h2>{{ pizzo | safe }}</h2>
+</body>
+</html>
